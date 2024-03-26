@@ -1,42 +1,36 @@
 // Write your code here
-import {Component} from 'react'
 import MoviesSlider from '../MoviesSlider'
 
-class PrimeVideo extends Component {
-  getComedyMovies = () => {
-    const {moviesList} = this.props
-    const comedyMovies = moviesList.filter(
-      eachMovieDetails => eachMovieDetails.categoryId === 'COMEDY',
-    )
-    return comedyMovies
-  }
+import './index.css'
 
-  getActionMovies = () => {
-    const {moviesList} = this.props
-    const actionMovies = moviesList.filter(
-      eachMovieDetails => eachMovieDetails.categoryId === 'ACTION',
-    )
-    return actionMovies
-  }
+const actionMovie = 'ACTION'
+const comedyMovie = 'COMEDY'
 
-  render() {
-    const comedyMovies = this.getComedyMovies()
-    const actionMovies = this.getActionMovies()
-    console.log(comedyMovies, actionMovies)
+const PrimeVideo = props => {
+  const {moviesList} = props
+  const actionMoviesList = moviesList.filter(
+    movie => movie.categoryId === actionMovie,
+  )
 
-    return (
-      <div>
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/prime-video-img.png"
-          alt="prime video"
-        />
-        <h1>Comedy Movies</h1>
-        <MoviesSlider moviesList={comedyMovies} />
-        <h1>Action Movies</h1>
-        <MoviesSlider moviesList={actionMovies} />
+  const comedyMoviesList = moviesList.filter(
+    movie => movie.categoryId === comedyMovie,
+  )
+
+  return (
+    <div className="prime-video-container">
+      <img
+        className="image"
+        src="https://assets.ccbp.in/frontend/react-js/prime-video-img.png"
+        alt="prime video"
+      />
+      <div className="movies-container">
+        <h1 className="movies-heading">Action Movies</h1>
+        <MoviesSlider moviesList={actionMoviesList} />
+        <h1 className="movies-heading">Comedy Movies </h1>
+        <MoviesSlider moviesList={comedyMoviesList} />
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default PrimeVideo

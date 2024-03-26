@@ -6,7 +6,7 @@ const moviesList = [
   {
     id: '61227099e13958e58d31e74c',
     thumbnailUrl:
-      'https://assets.ccbp.in/frotend/react-js/the-tomorrow-war-img.png',
+      'https://assets.ccbp.in/frontend/react-js/the-tomorrow-war-img.png',
     videoUrl: 'https://www.youtube.com/watch?v=QPistcpGB8o',
     categoryId: 'ACTION',
   },
